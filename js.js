@@ -5,6 +5,7 @@ function Pizza (name, price, size, toppings) {
 	this.size = size,
 	this.toppings = toppings
 }
+
 var pepperoniPizza = new Pizza("Pizza with tons of pepperoni", 2000, "L", ["Pepperoni", "Pepperoni", "Cheddar"]);
 var tokyo = new Pizza("Tokyo", 3090, "M", ["skinka", "hakk", "beikonkurl", "piparostur", "svartur pipar"]);
 var meatNcheese = new Pizza("Meat and Cheese", 1650, "S", ["pepperoni", "beikonkurl", "piparostur", "rjómaostur", "svartur pipar"]);
@@ -16,6 +17,11 @@ var americana = new Pizza("Americana", 3450, "L", ["beikonkurl", "cheddarostur",
 
 var pizzaArray = [pepperoniPizza, tokyo, meatNcheese, mexicano, svepperoni, sizzler, vegan, americana];
 
+var mainThing = document.getElementById("mainThing");
+
 for (var temp in pizzaArray) {
-	console.log(temp);
+	var tempDiv = document.createElement("div");
+	tempDiv.className="pizza";
+	tempDiv.innerHTML = "<div class=\"pizzaName\">" + pizzaArray[temp].name + "</div>";
+	mainThing.appendChild(tempDiv);
 };
