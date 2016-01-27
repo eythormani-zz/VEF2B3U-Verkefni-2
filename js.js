@@ -23,6 +23,17 @@ for (var temp in pizzaArray) {
 	var tempDiv = document.createElement("div");
 	tempDiv.className="pizza";
 	tempDiv.innerHTML = "<div class=\"pizzaName\">" + pizzaArray[temp].name + "</div>";
+
+	var size = document.createElement("div");
+	size.className = "size";
+	size.innerHTML = pizzaArray[temp].size;
+	tempDiv.appendChild(size);
+
+	var price = document.createElement("div");
+	price.className = "price";
+	price.innerHTML = pizzaArray[temp].price;
+	tempDiv.appendChild(price);
+
 	toppingContainer = document.createElement("div");
 	toppingContainer.className = "toppingContainer";
 	for (var temptemp in pizzaArray[temp].toppings) {
@@ -35,5 +46,6 @@ for (var temp in pizzaArray) {
 		toppingContainer.appendChild(tempTopping);
 	};
 	tempDiv.appendChild(toppingContainer);
+
 	mainThing.appendChild(tempDiv);
 };
